@@ -1,0 +1,27 @@
+<!-- <app-sidebar></app-sidebar> -->
+
+<div class="container main mb-2">
+    <div class="main1">
+        <h1 class="gray"> My Notes</h1>
+    </div>
+    <div class="main1">
+        <button (click)="goToCreateNote()" class="btn btn-outline-success m-2">Create Note</button>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row col-xl-12">
+        <div class="col-sm-4 ml-3 w-32 pt-1 pb-1 " *ngFor="let note of notes">
+            <div class="card">
+                <div style="display: inline; cursor:pointer;">S.no. {{note.Id}}
+                    <i class="fa fa-edit m-2 pl-4" (click)="goToEditNote(note)"></i>
+                    <i class="fa fa-trash red m-2 pl-5" (click)="deleteNote(note.Id)"></i>
+                </div>
+                <h3>{{ note.Title }}</h3>
+                <p>{{ note.Description }}</p>
+                <!-- <button (click)="goToEditNote(note )" class="btn btn-outline-dark mb-1">Edit</button> -->
+                <!-- <button (click)="deleteNote(note.Id)" class="btn btn-outline-danger simple">Delete</button> -->
+
+            </div>
+        </div>
+    </div>
+</div>

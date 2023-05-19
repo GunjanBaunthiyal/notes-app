@@ -1,0 +1,19 @@
+<div class="theDiv flex-container">
+    <form [formGroup]="addform" (ngSubmit)="onSubmit()">
+        <div class="bg">
+            <h1 mat-dialog-title>Notes</h1>
+        </div>
+        <input type="text" placeholder="Add Title" class="input" formControlName="title">
+        <textarea placeholder="Add Description" class=" mt-2 input" formControlName="description"></textarea>
+
+        <div style="display:flex; align-items:center; justify-content: center;">
+            <!-- 
+            <button class="btn btn-outline-success">{{ tablelist == null ? 'Add Note' : 'Edit Note' }}</button> -->
+            <button mat-stroked-button class="btn btn-outline-success m-2" (click)="openSnackBar()"
+                aria-label="Show an example snack-bar">
+                {{ tablelist == null ? 'Add Note' : 'Edit Note' }}
+            </button>
+            <button class="btn btn-outline-danger m-2" id="cancelBtn" (click)="onCancel()">Cancel</button>
+        </div>
+    </form>
+</div>
